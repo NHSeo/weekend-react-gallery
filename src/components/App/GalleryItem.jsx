@@ -21,6 +21,7 @@ function GalleryItem(props) {
 
   return (
     <div data-testid="galleryItem">
+        
     </div>
   );
 }
