@@ -11,4 +11,7 @@ INSERT INTO "gallery"
 VALUES
 ('images/goat_small.jpg', 'Goat!', 'Photo of a goat taken at Glacier National Park.'),
 ('images/goat_stache.png', 'Goat Stache!', 'Photo of a mustachioed goat taken at Glacier National Park.');
-  
+('images/cat_small.jpg', 'Cat!', 'Photo of a cat taken at home'),
+('images/dog_large.jpg', 'Dog!', 'Photo of a dog taken at American Kennel Club'),
+('images/fox_twin.jpg', 'Fox!', 'Photo of a fox taken at National Park.'),
+('images/koala_large.jpg', 'Koala!', 'Photo of a koala taken at Zoo')
