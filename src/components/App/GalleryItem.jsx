@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Card, CardContent, CardMedia, Typography, Button, Box } from '@mui/material';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function GalleryItem(props) {
     const { item, fetchGalleryItems } = props;
@@ -20,18 +22,32 @@ function GalleryItem(props) {
     };
 
     return (
-        <div data-testid="galleryItem">
-            <h2>{item.title}</h2>
-            <div onClick={toggleDescription} data-testid="toggle">
-                {showDescription ? (
-                    <p>{item.description}</p>
-                ) : (
-                    <img src={item.url} alt={item.title} />
-                )}
-            </div>
-            <button onClick={addLike} data-testid="like"> Like </button>
-            <p>{item.likes} people likes it!</p>
-        </div>
+        <Card data-testid="galleryItem" sx={{ width: 200 }}>
+            <CardContent>
+                <Typography variant="h6" component="div">
+                    {item.title}
+                </Typography>
+                <Box onClick={toggleDescription} data-testid="toggle" sx={{ cursor: 'help', mb: 2 }}>
+                    {showDescription ? (
+                        <Typography variant="body1">{item.description}</Typography>
+                    ) : (
+                        <CardMedia
+                            component="img"
+                            height="160"
+                            image={item.url}
+                            alt={item.title}
+                            sx={{ objectFit: 'cover' }}
+                        />
+                    )}
+                </Box>
+                <Button variant="outlined" color="error" startIcon={<FavoriteIcon />} onClick={addLike} data-testid="like">
+                    Love
+                </Button>
+                <Typography variant="body2">
+                    {item.likes} people love it!
+                </Typography>
+            </CardContent>
+        </Card>
     );
 }
 

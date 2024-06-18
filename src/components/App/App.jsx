@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import GalleryList from './GalleryList';
+import { Container, Typography } from '@mui/material';
 
 function App() {
   const [galleryItems, setGalleryItems] = useState([]);
@@ -22,14 +23,15 @@ function App() {
 
 
   return (
-    <div data-testid="app">
+    <Container data-testid="app">
       <header>
-        <h1>React Gallery</h1>
+        <Typography variant="h3">
+          React Gallery
+        </Typography>
       </header>
 
-      <p>The gallery goes here!</p>
       <GalleryList galleryItems={galleryItems} fetchGalleryItems={fetchGalleryItems} />
-    </div>
+    </Container>
   );
 }
 
